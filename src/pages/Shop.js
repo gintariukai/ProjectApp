@@ -1,13 +1,9 @@
-import React, {Component} from 'react';
+const Shop = () => {
+    return (
+        <div>
 
-class Shop extends Component {
-    render() {
-        return (
-            <div>
-
-            </div>
-        );
-    }
+        </div>
+    )
 }
 
 export default Shop;
