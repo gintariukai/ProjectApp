@@ -4,6 +4,7 @@ import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
 import NorFound from "./pages/NorFound";
 import Shop from "./pages/Shop";
+import Single from "./pages/Single";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/shop" element={<Shop/>}/>
                 <Route path="/about" element={<About/>}/>
+                <Route path="/shop/:id" element={<Single/>}/>
                 <Route path="/contacts" element={<Contacts/>}/>
                 <Route path="*" element={<NorFound/>}/>
             </Routes>
