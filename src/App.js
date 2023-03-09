@@ -12,15 +12,15 @@ function App() {
         <>
             <header>
                 <Link to="/"> Home </Link>
-                <Link to="/shop"> Shop </Link>
+                <Link to="/posts"> Shop </Link>
                 <Link to="/about"> About </Link>
                 <Link to="/contacts"> Contacts </Link>
             </header>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/shop" element={<Shop/>}/>
+                <Route path="/posts" element={<Shop/>}/>
                 <Route path="/about" element={<About/>}/>
-                <Route path="/shop/:id" element={<Single/>}/>
+                <Route path="/posts/:id" element={<Single/>}/>
                 <Route path="/contacts" element={<Contacts/>}/>
                 <Route path="*" element={<NorFound/>}/>
             </Routes>
