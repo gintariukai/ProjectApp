@@ -18,11 +18,11 @@ function App() {
             </header>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/posts" element={<Shop/>}/>
-                <Route path="/about" element={<About/>}/>
-                <Route path="/posts/:id" element={<Single/>}/>
-                <Route path="/contacts" element={<Contacts/>}/>
-                <Route path="*" element={<NorFound/>}/>
+                    <Route path="/posts" element={<Shop/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/posts/:id" element={<Single/>}/>
+                    <Route path="/contacts" element={<Contacts/>}/>
+                    <Route path="*" element={<NorFound/>}/>
             </Routes>
         </>
     );

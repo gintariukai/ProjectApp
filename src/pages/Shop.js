@@ -14,7 +14,7 @@ const Shop = () => {
             <h1>Our product</h1>
             {
                 posts.map(post => (
-                    <Link key={post.id} to={"/posts/${post.id}"} >
+                    <Link key={post.id} to="/posts/${post.id}" >
                         <li>{post.title}</li>
                     </Link>
                 ))
