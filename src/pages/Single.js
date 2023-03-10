@@ -1,24 +1,25 @@
+import React from "react";
 import {useParams, Link} from "react-router-dom";
 import {useState, useEffect} from "react";
 
 
 const Single = () => {
     const {id} = useParams();
-    const [post, setPost] = useState(null);
+    const [shop, setShop] = useState(null);
 
     useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/posts/${id}")
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
             .then(res => res.json())
-            .then(data => setPost(data))
+            .then(data => setShop(data))
     }, [id]);
 
     return (
         <div>
-            {post && (
+            {shop && (
                 <>
-                    <h1>{post.title}</h1>
-                    <p>{post.body}</p>
-                    <Link to="/posts/${id}/edit">Edit this post</Link>
+                    <h1>{shop.title}</h1>
+                    <p>{shop.body}</p>
+                    <Link to={`/posts/${id}`}>Edit the shop</Link>
                 </>
             )}
         </div>
