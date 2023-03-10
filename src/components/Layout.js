@@ -11,9 +11,13 @@ const Layout = () => {
                 <Link to="/contacts"> Contacts </Link>
             </header>
 
-            <Outlet />
+            <main className="container">
+                <Outlet />
+            </main>
 
-            <footer>2023 @copy</footer>
+            <footer className="container">
+               All rights reserved 2023 &copy;
+            </footer>
         </>
     );
 }

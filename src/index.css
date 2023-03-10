@@ -16,11 +16,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
-}
-
 header {
   background-color: var(--color-bg);
   padding: 2rem 0;
@@ -32,6 +27,7 @@ header > a {
   padding: 0 1rem;
 }
 header > a:hover {
+  opacity: 0.75;
   text-decoration: underline;
 }
 
@@ -64,4 +60,9 @@ main a:hover {
 .active {
   color: var(--color-active);
   cursor: default;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
 }
