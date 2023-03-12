@@ -1,11 +1,14 @@
 import React from "react";
-import {useParams, Link} from "react-router-dom";
+import {useParams, Link, useNavigate} from "react-router-dom";
 import {useState, useEffect} from "react";
 
 
 const Single = () => {
     const {id} = useParams();
+    const navigate = useNavigate();
     const [shop, setShop] = useState(null);
+
+    const goBack = () => navigate(-1);
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
@@ -15,6 +18,7 @@ const Single = () => {
 
     return (
         <div>
+            <button onClick={goBack}>Go back</button>
             {shop && (
                 <>
                     <h1>{shop.title}</h1>
