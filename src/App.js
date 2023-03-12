@@ -11,11 +11,12 @@ import Login from "./pages/Login";
 import Layout from "./components/Layout";
 import RequireAuth from "./hoc/RequireAuth";
 import Create from "./pages/Create";
+import AuthProvider from "./hoc/AuthProvider";
 
 
 function App() {
     return (
-        <>
+        <AuthProvider>
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<Home/>}/>
@@ -24,7 +25,7 @@ function App() {
                     <Route path="posts/:id" element={<Single/>}/>
                     <Route path="contacts" element={<Contacts/>}/>
                     <Route path="login" element={<Login/>}/>
-                    <Route path="create" element={
+                    <Route path="shop/create" element={
                         <RequireAuth>
                             <Create/>
                         </RequireAuth>
@@ -32,7 +33,7 @@ function App() {
                     <Route path="*" element={<NorFound/>}/>
                 </Route>
             </Routes>
-        </>
+        </AuthProvider>
     );
 }
 
