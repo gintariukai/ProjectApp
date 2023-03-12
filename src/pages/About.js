@@ -6,8 +6,9 @@ const About = () => {
                 <h1>About us</h1>
                 <p>This is a demo website about ....</p>
                 <ul>
-                    <li><Link to="contacts">Our Contacts</Link></li>
+                    <li><Link to="team">Our Team</Link></li>
                 </ul>
+
                 <Outlet/>
             </div>
     )
