@@ -13,7 +13,7 @@ const ItemsFilter = ({itemQuery, latest, setSearchParams}) => {
 
         const params = {};
 
-        if (query.length) params.post = query;
+        if (query.length) params.item = query;
         if (isLatest) params.latest = true;
 
         setSearchParams(params);

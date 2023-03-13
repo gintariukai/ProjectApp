@@ -1,13 +1,13 @@
 import {Await, defer, Link, useAsyncValue, useLoaderData, useNavigate} from "react-router-dom";
 import {Suspense} from "react";
 
-const Post = () => {
-    const post = useAsyncValue()
+const Item = () => {
+    const item = useAsyncValue()
 
     return (
         <>
-        <h1>{post.title}</h1>
-            <p>{post.body}</p>
+        <h1>{item.title}</h1>
+            <p>{item.body}</p>
         </>
     )
 }
@@ -30,7 +30,7 @@ const Comments = () => {
 }
 
 const Single = () => {
-    const {post, id, comments} = useLoaderData()
+    const {item, id, comments} = useLoaderData()
     const navigate = useNavigate();
 
     const goBack = () => navigate(-1);
@@ -39,8 +39,8 @@ const Single = () => {
         <div>
             <button onClick={goBack}>Go back</button>
             <Suspense fallback={<h2>Item is loading...</h2>}>
-                <Await resolve={post}>
-                    <Post/>
+                <Await resolve={item}>
+                    <Item/>
                 </Await>
             </Suspense>
             <Suspense fallback={<h2>Comments is loading...</h2>}>
@@ -65,11 +65,11 @@ async function getCommentsByItem(id) {
     return res.json()
 }
 
-const postLoader = async ({params}) => {
+const itemLoader = async ({params}) => {
     const id = params.id;
 
-    return defer({post: await getItemById(id), id, comments: getCommentsByItem(id)})
+    return defer({item: await getItemById(id), id, comments: getCommentsByItem(id)})
 }
 
 export default Single;
-export {postLoader};
+export {itemLoader};

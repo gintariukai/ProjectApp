@@ -3,12 +3,12 @@ import ItemsFilter from "../components/ItemsFilter";
 import {Suspense} from "react";
 
 const Shop = () => {
-    const {posts} = useLoaderData();
+    const {items} = useLoaderData();
 
     const [searchParams, setSearchParams] = useSearchParams();
 
-    const itemQuery = searchParams.get('post') || '';
-    const latest = searchParams.has('latest');
+    const itemQuery = searchParams.get("item") || "";
+    const latest = searchParams.has("latest");
 
     const startsForm = latest ? 80 : 1;
 
@@ -18,18 +18,18 @@ const Shop = () => {
 
             <ItemsFilter itemQuery={itemQuery} latest={latest} setSearchParams={setSearchParams}/>
 
-            <Link to="/posts/new" className="create" >Add new product</Link>
+            <Link to="/items/new" className="create" >Add new product</Link>
 
             <Suspense fallback={<h2>Loading...</h2>}>
-                <Await resolve={posts}>
+                <Await resolve={items}>
                     {
-                        (resolvedPosts) => (<>
+                        (resolvedItems) => (<>
                             {
-                                resolvedPosts.filter(
-                                    post => post.title.includes(itemQuery) && post.id >= startsForm
-                                ).map(post => (
-                                    <Link key={post.id} to={`/posts/${post.id}`} >
-                                        <li>{post.title}</li>
+                                resolvedItems.filter(
+                                    item => item.title.includes(itemQuery) && item.id >= startsForm
+                                ).map(item => (
+                                    <Link key={item.id} to={`/posts/${item.id}`} >
+                                        <li>{item.title}</li>
                                     </Link>
                                 ))
                             }
@@ -50,7 +50,7 @@ async function getItems() {
 const shopLoader = async () => {
 
     return defer({
-        posts: getItems()
+        items: getItems()
     })
 }
 

@@ -9,7 +9,7 @@ const Layout = () => {
         <>
             <header>
                 <NavLink to="/" className={setActive}> Home </NavLink>
-                <NavLink to="/posts" className={setActive}> Shop </NavLink>
+                <NavLink to="/items" className={setActive}> Shop </NavLink>
                 <NavLink to="/about" className={setActive}> About </NavLink>
                 <NavLink to="/contacts" className={setActive}> Contacts </NavLink>
                 <NavLink to="/shoppingcart" className={setActive}> < FaShoppingCart/> </NavLink>
