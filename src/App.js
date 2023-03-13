@@ -4,7 +4,7 @@ import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
 import NorFound from "./pages/NorFound";
 import Shop, {shopLoader} from "./pages/Shop";
-import Single, {itemLoader, postLoader} from "./pages/Single";
+import Single, {itemLoader} from "./pages/Single";
 import Login from "./pages/Login";
 import Order from "./pages/Order";
 import CreateItem from "./pages/CreateItem";
@@ -23,9 +23,9 @@ const router = createBrowserRouter(createRoutesFromElements(
         </Route>
         <Route path="about-us" element={<Navigate to="/about" replace/>}/>
         <Route path="items" element={<Shop/>} loader={shopLoader}/>
-        <Route path="items/:id" element={<Single/>} loader={itemLoader}/>
-        <Route path="items/:id/edit" element={<EditItem/>}/>
-        <Route path="shoppingcart" element={<Order/>}/>
+        <Route path="posts/:id" element={<Single/>} loader={itemLoader}/>
+        <Route path="posts/:id/edit" element={<EditItem/>}/>
+        <Route path="order" element={<Order/>}/>
         <Route path="items/new" element={
             <RequireAuth>
                 <CreateItem/>

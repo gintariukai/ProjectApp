@@ -12,7 +12,7 @@ const Layout = () => {
                 <NavLink to="/items" className={setActive}> Shop </NavLink>
                 <NavLink to="/about" className={setActive}> About </NavLink>
                 <NavLink to="/contacts" className={setActive}> Contacts </NavLink>
-                <NavLink to="/shoppingcart" className={setActive}> < FaShoppingCart/> </NavLink>
+                <NavLink to="/order" className={setActive}> < FaShoppingCart/> </NavLink>
                 <NavLink to="/search" className={setActive}> < GoSearch/> </NavLink>
             </header>
 
