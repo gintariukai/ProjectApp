@@ -1,7 +1,7 @@
 import {useState} from "react";
 
-const ItemsFilter = ({shopQuery, latest, setSearchParams}) => {
-    const [search, setSearch] = useState(shopQuery);
+const ItemsFilter = ({itemQuery, latest, setSearchParams}) => {
+    const [search, setSearch] = useState(itemQuery);
     const [checked, setChecked] = useState(latest);
 
     const handleSubmit = (e) => {
@@ -13,7 +13,7 @@ const ItemsFilter = ({shopQuery, latest, setSearchParams}) => {
 
         const params = {};
 
-        if (query.length) params.shop = query;
+        if (query.length) params.post = query;
         if (isLatest) params.latest = true;
 
         setSearchParams(params);

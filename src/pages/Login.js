@@ -1,5 +1,4 @@
 import {useLocation, useNavigate} from "react-router-dom";
-
 import useAuth from "../hook/useAuth";
 
 const Login = () => {
