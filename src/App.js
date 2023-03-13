@@ -12,6 +12,7 @@ import Layout from "./components/Layout";
 import RequireAuth from "./hoc/RequireAuth";
 import Create from "./pages/Create";
 import AuthProvider from "./hoc/AuthProvider";
+import {FaShoppingCart} from "react-icons/fa";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                     </Route>
                     <Route path="posts/:id" element={<Single/>}/>
                     <Route path="contacts" element={<Contacts/>}/>
+                    <Route path="shoppingcart" element={<FaShoppingCart/>}/>
                     <Route path="login" element={<Login/>}/>
                     <Route path="shop/create" element={
                         <RequireAuth>
