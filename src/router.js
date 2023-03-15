@@ -7,7 +7,7 @@ import Single, {itemLoader} from "./pages/Single";
 import EditItem from "./pages/EditItem";
 import Order from "./pages/Order";
 import RequireAuth from "./hoc/RequireAuth";
-import CreateItem from "./pages/CreateItem";
+import CreateItem, {createItemAction} from "./pages/CreateItem";
 import Contacts from "./pages/Contacts";
 import Login from "./pages/Login";
 import NorFound from "./pages/NorFound";
@@ -28,7 +28,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             <RequireAuth>
                 <CreateItem/>
             </RequireAuth>
-        }/>
+        } action={createItemAction}/>
         <Route path="contacts" element={<Contacts/>}/>
         <Route path="login" element={<Login/>}/>
 

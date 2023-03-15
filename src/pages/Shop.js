@@ -43,7 +43,7 @@ const Shop = () => {
 }
 
 async function getItems() {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/postsss`)
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
 
     // if (!res.ok) {
     //     throw new Response("", {status: res.status, statusText: "Not Found...!!!"})
@@ -55,9 +55,9 @@ async function getItems() {
 const shopLoader = async () => {
     const items = getItems()
 
-    if (!items.length) {
-        throw json({message: "Not Found", reason: "Wrong url"}, {status: 404})
-    }
+    // if (!items.length) {
+    //     throw json({message: "This page doesn't exist!", reason: "Not found, wrong url.."}, {status: 404})
+    // }
 
     return defer({
         items
