@@ -22,7 +22,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="about-us" element={<Navigate to="/about" replace/>}/>
         <Route path="items" element={<Shop/>} loader={shopLoader} errorElement={<ErrorPage/>}/>
         <Route path="posts/:id" element={<Single/>} loader={itemLoader}/>
-        <Route path="posts/:id/edit" element={<EditItem/>}/>
+        <Route path="posts/:id/edit" element={<EditItem/>} loader={itemLoader} action={updateItemAction}/>
         <Route path="order" element={<Order/>}/>
         <Route path="items/new" element={
             <RequireAuth>
