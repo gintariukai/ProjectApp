@@ -11,6 +11,7 @@ import CreateItem from "./pages/CreateItem";
 import Contacts from "./pages/Contacts";
 import Login from "./pages/Login";
 import NorFound from "./pages/NorFound";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout/>}>
@@ -19,7 +20,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path="team" element={<p>Our Team</p>}/>
         </Route>
         <Route path="about-us" element={<Navigate to="/about" replace/>}/>
-        <Route path="items" element={<Shop/>} loader={shopLoader}/>
+        <Route path="items" element={<Shop/>} loader={shopLoader} errorElement={<ErrorPage/>}/>
         <Route path="posts/:id" element={<Single/>} loader={itemLoader}/>
         <Route path="posts/:id/edit" element={<EditItem/>}/>
         <Route path="order" element={<Order/>}/>

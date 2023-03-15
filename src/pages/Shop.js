@@ -1,6 +1,7 @@
 import {Await, defer, Link, useLoaderData, useSearchParams} from "react-router-dom";
 import ItemsFilter from "../components/ItemsFilter";
 import {Suspense} from "react";
+import {json} from "react-router";
 
 const Shop = () => {
     const {items} = useLoaderData();
@@ -42,15 +43,24 @@ const Shop = () => {
 }
 
 async function getItems() {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
+    const res = await fetch(`https://jsonplaceholder.typicode.com/postsss`)
+
+    // if (!res.ok) {
+    //     throw new Response("", {status: res.status, statusText: "Not Found...!!!"})
+    // }
 
     return res.json()
 }
 
 const shopLoader = async () => {
+    const items = getItems()
+
+    if (!items.length) {
+        throw json({message: "Not Found", reason: "Wrong url"}, {status: 404})
+    }
 
     return defer({
-        items: getItems()
+        items
     })
 }
 
