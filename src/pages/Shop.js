@@ -1,4 +1,4 @@
-import {Await, Link, useLoaderData, useSearchParams, json} from "react-router-dom";
+import {Await, Link, useLoaderData, useSearchParams} from "react-router-dom";
 import ItemsFilter from "../components/ItemsFilter";
 import {Suspense} from "react";
 
