@@ -8,8 +8,8 @@ const UpdateItem = ({id, title, description, userId, submitting}) => {
                 <input type="text" name="title" defaultValue={title} />
             </label>
             <label>
-                Description:
-                <input type="text" name="description" defaultValue={description} />
+                Body:
+                <input type="text" name="body" defaultValue={description} />
             </label>
 
             <input type="hidden" name="userId" value={userId}/>
