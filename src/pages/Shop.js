@@ -1,4 +1,4 @@
-import {Await, defer, Link, useLoaderData, useSearchParams} from "react-router-dom";
+import {Await, Link, useLoaderData, useSearchParams, json} from "react-router-dom";
 import ItemsFilter from "../components/ItemsFilter";
 import {Suspense} from "react";
 
@@ -58,7 +58,7 @@ const shopLoader = async () => {
     //     throw json({message: "This page doesn't exist!", reason: "Not found, wrong url.."}, {status: 404})
     // }
 
-    return defer({
+    return ({
         items
     })
 }

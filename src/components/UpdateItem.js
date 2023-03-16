@@ -2,7 +2,7 @@ import {Form} from "react-router-dom";
 
 const UpdateItem = ({id, title, description, userId, submitting}) => {
     return (
-        <Form method='item' action={`/posts/${id}/edit`}>
+        <Form method='post' action={`/posts/${id}/edit`}>
             <label>
                 Title:
                 <input type="text" name="title" defaultValue={title} />

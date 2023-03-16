@@ -2,14 +2,14 @@ import {Form} from "react-router-dom";
 
 const NewItem = ({submitting}) => {
     return (
-        <Form action="/items/new" method='item'>
+        <Form action="/items/new" method='post'>
             <label>
                 Title:
                 <input type="text" name="title"/>
             </label>
             <label>
-                Description:
-                <input type="text" name="description"/>
+                Body:
+                <input type="text" name="body"/>
             </label>
 
             <input type="hidden" name="userId" value="1"/>

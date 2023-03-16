@@ -10,16 +10,17 @@ const CreateItem = () => {
         return (
             <div>
                 <h1>Create a item</h1>
-                <NewItem submitting={navigation.state === 'submitting'}/>
+                <NewItem submitting={navigation.state === "submitting"}/>
                 <button onClick={() => singOut(() => navigate("/", {replace: true}))}>Log Out</button>
             </div>
         );
 }
 
-const createItem = async ({title, description, userId}) => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'ITEM',
-        description: JSON.stringify({title, description, userId})
+const createItem = async ({title, body, userId}) => {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({title, body, userId})
     })
     const newItem = await res.json()
 
@@ -27,12 +28,12 @@ const createItem = async ({title, description, userId}) => {
 
 }
 
-const createItemAction = async (request) => {
+const createItemAction = async ({request}) => {
     const formData = await request.formData();
     const newItem = {
         title: formData.get("title"),
-        description: formData.get("description"),
-        userId: formData.get("userId"),
+        body: formData.get("body"),
+        userId: formData.get("userId")
     }
     const item = await createItem(newItem);
 

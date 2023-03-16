@@ -2,7 +2,7 @@ import {Await, defer, Link, useAsyncValue, useLoaderData, useNavigate} from "rea
 import {Suspense} from "react";
 
 const Item = () => {
-    const item = useAsyncValue()
+    const item = useAsyncValue();
 
     return (
         <>
