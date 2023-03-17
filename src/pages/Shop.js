@@ -59,7 +59,7 @@ const shopLoader = async () => {
     // }
 
     return defer({
-        items: getItems()
+        items
     })
 }
 
